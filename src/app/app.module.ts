@@ -13,6 +13,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { SuperTabsModule } from 'ionic2-super-tabs';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,11 +23,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SocialPage,
     SettingsPage,
     RoutePage,
-    TabsPage
+    TabsPage,
+
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    SuperTabsModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
