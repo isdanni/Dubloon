@@ -1,3 +1,82 @@
 page-home {
+    .scroll-content {
+        overflow: hidden;
+      }
+    
+    .content-ios {
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.2), 
+          rgba(0, 0, 0, 0.2)
+        ), url("./../assets/imgs/map.png");
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: cover;
 
+        ion-searchbar.searchbar-ios{      
+            width: 85%;
+            margin: 0 auto;
+            background:white;
+            margin-top: 40px;
+            box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
+            .searchbar-input-container{      
+                .searchbar-input{
+                    border-radius: 0px;
+                }
+            }
+        }
+
+        ion-item.item-ios.item-block {
+            text-align: center;
+            background: none;
+            padding: 0;
+            
+             .item-inner {
+                padding: 0;
+                border: none;
+
+                .label-ios {
+                    margin-right: 0;
+                    overflow: visible;
+                    
+                    ion-avatar {
+                        vertical-align: middle;
+                        display: inline-block;
+                        border-radius: 50%; 
+                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                        margin: 0 5px;
+                        background-color: white;
+                        min-width: 15px;
+                        min-height: 15px;
+                        padding: 3px;
+
+                        img {
+                            width: 15px;
+                            height: 15px;
+                        }
+
+                        &.selected{
+                            min-width: 40px;
+                            min-height: 40px;
+                            box-shadow: 0px 0px 5px 5px #fff;
+
+                            img{
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+
+                        &.sibling {
+                            min-width: 30px;
+                            min-height: 30px;
+
+                            img{
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
