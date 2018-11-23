@@ -3,7 +3,7 @@ page-home {
         overflow: hidden;
       }
     
-    .content-ios {
+    .content {
         background: linear-gradient(
           rgba(0, 0, 0, 0.2), 
           rgba(0, 0, 0, 0.2)
@@ -12,7 +12,7 @@ page-home {
         background-position-x: center;
         background-size: cover;
 
-        ion-searchbar.searchbar-ios{      
+        ion-searchbar.searchbar{      
             width: 85%;
             margin: 0 auto;
             background:white;
@@ -25,7 +25,7 @@ page-home {
             }
         }
 
-        ion-item.item-ios.item-block {
+        ion-item.item.item-block {
             text-align: center;
             background: none;
             padding: 0;
@@ -34,7 +34,7 @@ page-home {
                 padding: 0;
                 border: none;
 
-                .label-ios {
+                .label {
                     margin-right: 0;
                     overflow: visible;
                     
