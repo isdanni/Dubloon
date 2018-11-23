@@ -12,10 +12,10 @@ page-home {
         background-position-x: center;
         background-size: cover;
 
-        ion-searchbar.searchbar{      
+        ion-searchbar.searchbar {
+            padding: 0;
             width: 85%;
             margin: 0 auto;
-            background:white;
             margin-top: 40px;
             box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
             .searchbar-input-container{      
