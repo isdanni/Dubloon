@@ -9,11 +9,9 @@
 </ion-header>
 
 <ion-content padding>
-	<ion-searchbar (ionInput)="getItems($event)" placeholder = "Where to, Captain?" spellcheck = true ></ion-searchbar>
+	<ion-searchbar placeholder = "Where to, Captain?" spellcheck = true ></ion-searchbar>
 
-    <!--FULL SCREEN-->
-
-		<ion-item>
+	<ion-item>
 		<ion-avatar>
 			<img src="./../../assets/imgs/icon7.png">
 		</ion-avatar>
@@ -29,5 +27,38 @@
 		<ion-avatar>
 			<img src="./../../assets/imgs/icon8.png">
 		</ion-avatar>
-		</ion-item>
+	</ion-item>
+
+	<ion-slides slidesPerView="5" spaceBetween="10"	loop (ionSlideDidChange)="slideChanged()">
+		<ion-slide>
+			<ion-avatar>
+				<img src="./../../assets/imgs/icon7.png">
+			</ion-avatar>
+		</ion-slide>
+
+		<ion-slide>
+			<ion-avatar class="sibling">
+				<img src="./../../assets/imgs/icon5.png">
+			</ion-avatar>
+		</ion-slide>
+
+		<ion-slide>
+			<ion-avatar class="selected">
+				<img src="./../../assets/imgs/icon2.png">
+			</ion-avatar>
+		</ion-slide>
+		<ion-slide>
+			<ion-avatar class="sibling">
+				<img src="./../../assets/imgs/icon6.png">
+			</ion-avatar>
+		</ion-slide>
+
+		<ion-slide>
+			<ion-avatar>
+				<img src="./../../assets/imgs/icon8.png">
+			</ion-avatar>
+		</ion-slide>
+</ion-slides>
+
+	<ion-icon class="pin_gold" name="pin"></ion-icon>
 </ion-content>

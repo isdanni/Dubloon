@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
 
 /**
  * Generated class for the HomePage page.
@@ -20,6 +22,13 @@ export class HomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+  }
+
+  @ViewChild(Slides) slides: Slides;
+  slideChanged() {
+    let currentIndex = this.slides.getActiveIndex();
+    this.slides.zoom = true;
+    console.log('Current index is', currentIndex);
   }
 
 }
