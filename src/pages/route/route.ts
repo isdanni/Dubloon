@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavParams } from 'ionic-angular';
 import { DrawerState } from 'ion-bottom-drawer';
 import { Events } from 'ionic-angular';
+import { GlobalParamsProvider } from '../../providers/global-params/global-params';
+import { MyApp } from '../../app/app.component';
 /**
  * Generated class for the RoutePage page.
  *
@@ -25,7 +27,8 @@ export class RoutePage {
 
   constructor(
     public navParams: NavParams,
-    public events: Events
+    public events: Events,
+    private globalParamsProvider: GlobalParamsProvider
     ) 
     {
 
@@ -39,6 +42,10 @@ export class RoutePage {
     this.nowState = DrawerState.Docked;
   }
 
+  ionViewDidLeave(){
+    this.nowState = DrawerState.Bottom;
+  }
+
   viewWillEnter() {
     console.log('viewwillenter');
     this.nowState = DrawerState.Docked;
@@ -46,5 +53,12 @@ export class RoutePage {
 
   routeGenerator(event: any) {
   	console.log('ionViewDidLoad RoutePage');
+  }
+
+  stateChange(state){
+    console.log(this.nowState);
+    if(this.nowState === 0){
+      this.globalParamsProvider.nav.push(MyApp);
+    }
   }
 }

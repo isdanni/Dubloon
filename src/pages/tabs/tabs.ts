@@ -14,8 +14,6 @@ import { RoutePage } from '../route/route';
 })
 export class TabsPage implements AfterViewInit {
 
-  @ViewChild("SuperTabs") superTabs: any;
-
   tab1Root = HomePage;
   tab2Root = RoutePage;
   tab3Root = CameraPage;
@@ -33,9 +31,10 @@ export class TabsPage implements AfterViewInit {
   }
 
   init(){
-    console.log('gogogo');
     this.events.publish('page:init');
   }
+
+  
 
   ngAfterViewInit() {
     // must wait for AfterViewInit if you want to modify the tabs instantly

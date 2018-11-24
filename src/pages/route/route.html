@@ -18,7 +18,7 @@
 </ion-content> 
 <!-- <ion-content no-bounce>Component content.<ion-content> -->
 <ion-bottom-drawer [(state)]="nowState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight"
-  [shouldBounce]="shouldBounce" [distanceTop]="distanceTop">
+  [shouldBounce]="shouldBounce" [distanceTop]="distanceTop" (stateChange)="stateChange(state)">
   <div class="drawer-content">
       <div id="blue_box">
           <div id="left">

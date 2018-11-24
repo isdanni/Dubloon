@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { IonBottomDrawerModule } from 'ion-bottom-drawer';
+import { GlobalParamsProvider } from '../providers/global-params/global-params';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { IonBottomDrawerModule } from 'ion-bottom-drawer';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GlobalParamsProvider
   ]
 })
 export class AppModule {}
