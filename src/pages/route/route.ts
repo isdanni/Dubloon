@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DrawerState } from 'ion-bottom-drawer';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the RoutePage page.
@@ -17,16 +18,34 @@ import { DrawerState } from 'ion-bottom-drawer';
 export class RoutePage {
 
   minimumHeight = 0;
-  dockedHeight = 150;
+  dockedHeight = 550;
   shouldBounce = true;
   distanceTop = 56;
   drawerState: DrawerState;
-  nowState = DrawerState.Docked;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  nowState = DrawerState.Bottom;
+
+  allEvents = Observable.merge(
+    this.navCtrl.viewDidLoad,
+    this.navCtrl.viewWillEnter,
+    this.navCtrl.viewDidEnter,
+    this.navCtrl.viewWillLeave,
+    this.navCtrl.viewDidLeave,
+    this.navCtrl.viewWillUnload);
+
+  constructor(private navCtrl: NavController, public navParams: NavParams) {
+
+    this.allEvents.subscribe((e) => {
+      console.log(e);
+    });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RoutePage');
+    this.nowState = DrawerState.Docked;
+  }
+
+  viewWillEnter() {
+    console.log('viewwillenter');
+    this.nowState = DrawerState.Docked;
   }
 
 }

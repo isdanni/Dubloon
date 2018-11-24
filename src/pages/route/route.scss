@@ -30,3 +30,29 @@ page-route {
         background-size: cover;
     }
 }
+
+//colors
+$white: white;
+$blue: blue;
+
+#left {
+	width: 50%;
+	float: left;
+	
+}
+#right {
+	width: 50%;
+	float: right;
+	
+}
+#blue_box {
+	position: relative;
+	padding: 1px;
+}
+.divider {
+	position: absolute;
+	left: 5%;
+	top: 10%;
+	bottom: 10%;
+	border-left: 1px solid $white;
+}

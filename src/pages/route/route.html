@@ -20,11 +20,22 @@
 <ion-bottom-drawer [(state)]="nowState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight"
   [shouldBounce]="shouldBounce" [distanceTop]="distanceTop">
   <div class="drawer-content">
-      <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-card>
-                <img src="/assets/imgs/Route Creator.png"/>
+      <div id="blue_box">
+          <div id="left">
+            <ion-card>
+              <img src="/assets/imgs/Route Creator.png"/>
+              <ion-card-content>
+                <!-- <ion-card-title>
+                  Nine Inch Nails Live
+                  </ion-card-title> -->
+                <!-- <p>
+                  The most popular industrial group ever, and largely
+                  responsible for bringing the music to a mass audience.
+                </p> -->
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+                <img src="/assets/imgs/Famous Routes.png"/>
                 <ion-card-content>
                   <!-- <ion-card-title>
                     Nine Inch Nails Live
@@ -35,30 +46,34 @@
                   </p> -->
                 </ion-card-content>
               </ion-card>
-            </ion-col>
-            <ion-col>
-                <ion-card>
-                  <img src="/assets/imgs/Community Routes.png"/>
+          </div>
+          <div class="divider"></div>
+          <div id="right">
+              <ion-card>
+                <img src="/assets/imgs/Community Routes.png"/>
+                <ion-card-content>
+                  <!-- <ion-card-title>
+                    Nine Inch Nails Live
+                    </ion-card-title> -->
+                  <!-- <p>
+                    The most popular industrial group ever, and largely
+                    responsible for bringing the music to a mass audience.
+                  </p> -->
+                </ion-card-content>
+              </ion-card>
+              <ion-card>
+                  <img src="/assets/imgs/Quick Planner.png"/>
                   <ion-card-content>
-                      <!-- <ion-card-title>
-                        Nine Inch Nails Live
-                        </ion-card-title> -->
-                      <!-- <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                      </p> -->
-                    </ion-card-content>
-                  </ion-card>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              1 of 3
-            </ion-col>
-            <ion-col>
-              2 of 3
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+                    <!-- <ion-card-title>
+                      Nine Inch Nails Live
+                      </ion-card-title> -->
+                    <!-- <p>
+                      The most popular industrial group ever, and largely
+                      responsible for bringing the music to a mass audience.
+                    </p> -->
+                  </ion-card-content>
+                </ion-card>
+          </div>
+      </div>
   </div>
 </ion-bottom-drawer>
