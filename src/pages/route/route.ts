@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams } from 'ionic-angular';
 import { DrawerState } from 'ion-bottom-drawer';
-import { Observable } from 'rxjs/Observable';
-
+import { Events } from 'ionic-angular';
 /**
  * Generated class for the RoutePage page.
  *
@@ -24,19 +23,16 @@ export class RoutePage {
   drawerState: DrawerState;
   nowState = DrawerState.Bottom;
 
-  allEvents = Observable.merge(
-    this.navCtrl.viewDidLoad,
-    this.navCtrl.viewWillEnter,
-    this.navCtrl.viewDidEnter,
-    this.navCtrl.viewWillLeave,
-    this.navCtrl.viewDidLeave,
-    this.navCtrl.viewWillUnload);
+  constructor(
+    public navParams: NavParams,
+    public events: Events
+    ) 
+    {
 
-  constructor(private navCtrl: NavController, public navParams: NavParams) {
-
-    this.allEvents.subscribe((e) => {
-      console.log(e);
-    });
+      events.subscribe('page:init', () => {
+        // user and time are the same arguments passed in `events.publish(user, time)`
+        this.ionViewDidLoad();
+      });
   }
 
   ionViewDidLoad() {
