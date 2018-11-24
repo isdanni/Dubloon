@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DrawerState } from 'ion-bottom-drawer';
 
 /**
  * Generated class for the RoutePage page.
@@ -15,6 +16,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RoutePage {
 
+  minimumHeight = 0;
+  dockedHeight = 150;
+  shouldBounce = true;
+  distanceTop = 56;
+  drawerState: DrawerState;
+  nowState = DrawerState.Docked;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

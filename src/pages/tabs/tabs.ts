@@ -1,12 +1,13 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 
 import { HomePage } from '../home/home';
-import { RoutePage } from '../route/route';
+
 import { CameraPage } from '../camera/camera';
 import { SocialPage } from '../social/social';
 import { SettingsPage } from '../settings/settings';
 import { SuperTabsController } from 'ionic2-super-tabs';
 import { ActionSheetController } from 'ionic-angular';
+import { RoutePage } from '../route/route';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -16,7 +17,7 @@ export class TabsPage implements AfterViewInit {
   @ViewChild("SuperTabs") superTabs: any;
 
   tab1Root = HomePage;
-  // tab2Root = RoutePage;
+  tab2Root = RoutePage;
   tab3Root = CameraPage;
   tab4Root = SocialPage;
   tab5Root = SettingsPage;

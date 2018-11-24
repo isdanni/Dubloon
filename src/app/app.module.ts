@@ -14,6 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { SuperTabsModule } from 'ionic2-super-tabs';
+import { IonBottomDrawerModule } from 'ion-bottom-drawer';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     SuperTabsModule.forRoot(),
+    IonBottomDrawerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
