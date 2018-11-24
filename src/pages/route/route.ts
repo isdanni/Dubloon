@@ -29,4 +29,7 @@ export class RoutePage {
     console.log('ionViewDidLoad RoutePage');
   }
 
+  routeGenerator(event: any) {
+  	console.log('ionViewDidLoad RoutePage');
+  }
 }
