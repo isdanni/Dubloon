@@ -1,3 +1,32 @@
 page-route {
+    .content {
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.2), 
+          rgba(0, 0, 0, 0.2)
+        ), url("./../../assets/imgs/map.png");
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: cover;
 
+        ion-searchbar.searchbar {
+            padding: 0;
+            width: 85%;
+            margin: 0 auto;
+            margin-top: 40px;
+            box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
+            .searchbar-input-container{      
+                .searchbar-input{
+                    border-radius: 0px;
+                }
+            }
+        }
+    }
+
+
+    .drawer-content {
+    	background-color: white;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: cover;
+    }
 }
