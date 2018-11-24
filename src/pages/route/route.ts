@@ -18,7 +18,7 @@ import { Observable } from 'rxjs/Observable';
 export class RoutePage {
 
   minimumHeight = 0;
-  dockedHeight = 550;
+  dockedHeight = 400;
   shouldBounce = true;
   distanceTop = 56;
   drawerState: DrawerState;
