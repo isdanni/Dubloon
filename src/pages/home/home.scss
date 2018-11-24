@@ -12,7 +12,7 @@ page-home {
         background-position-x: center;
         background-size: cover;
 
-        &.pin_active {
+        &.content_pin_active {
             background: radial-gradient(
                 rgba(0, 0, 0, 0.3), 
                 rgba(0, 0, 0, 0.7)
@@ -186,6 +186,10 @@ page-home {
                 background-repeat: no-repeat;
                 background-position-y: bottom;
             }
+            &.pin_selected {
+                border-bottom: 1px solid black;
+                border-radius: 50%;
+            }
 
             &.pin1 {
                 top: 100px;
@@ -205,14 +209,14 @@ page-home {
             }
             &.pin5 {
                 top: 220px;
-                // left: 180px;
+                left: 30px;
             }
             &.pin6 {
                 top: 100px;
                 // left: 100px;
             }
             &.pin7 {
-                top: 150px;
+                top: 350px;
                 // left: 100px;
             }
             &.pin8 {
@@ -232,8 +236,8 @@ page-home {
                 // left: 51x;
             }
             &.pin12 {
-                top: 167px;
-                // left: 33px;
+                top: 307px;
+                left: 130px;
             }
             &.pin13 {
                 top: 50px;
@@ -246,6 +250,37 @@ page-home {
             &.pin15 {
                 top: 220px;
                 // left: 180px;
+            }
+        }
+
+        .pin_menu {
+            // display: block;
+            position:fixed;
+            top: 359px;
+            left: 165px;
+
+            // width:30em;
+            // height:18em;
+            // margin-top: -9em; /*set to a negative number 1/2 of your height*/
+            // margin-left: -15em; /*set to a negative number 1/2 of your width*/
+            // border: 1px solid #ccc;
+            // background-color: #f3f3f3;
+
+            &.pin_menu_inactive {
+                display: none;
+            }
+
+            ion-icon {
+                background-color: rgba(255, 255, 255, 0.8);
+                width: 30px;
+                height: 30px;
+                font-size: 30px;
+                text-align: center;
+                font-weight: bold;
+
+                &.plus {
+                    color: green;
+                }
             }
         }
     }

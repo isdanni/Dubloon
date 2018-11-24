@@ -21,7 +21,7 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+    // console.log('ionViewDidLoad HomePage');
   }
 
   @ViewChild(Slides) slides: Slides;
@@ -55,31 +55,9 @@ export class HomePage {
     // }
   }
 
-  // declare
-  // public pin_image_gold = "./../../assets/imgs/GoldenPin.png";
-  // public pin_image_silver = "./../../assets/imgs/SilverPin.png";
-  // public pin_image_bronze = "./../../assets/imgs/BronzePin.png";
-  // public pin_image_netural = "./../../assets/imgs/NeutralPin.png";
-
-  // public pin_image1 = this.pin_image_bronze;
-  // public pin_image2 = this.pin_image_bronze;
-  // public pin_image3 = this.pin_image_bronze;
-  // public pin_image4 = this.pin_image_bronze;
-  // public pin_image5 = this.pin_image_bronze;
-  // public pin_image6 = this.pin_image_bronze;
-  // public pin_image7 = this.pin_image_bronze;
-  // public pin_image8 = this.pin_image_bronze;
-  // public pin_image9 = this.pin_image_silver;
-  // public pin_image10 = this.pin_image_silver;
-  // public pin_image11 = this.pin_image_silver;
-  // public pin_image12 = this.pin_image_silver;
-  // public pin_image13 = this.pin_image_gold;
-  // public pin_image14 = this.pin_image_gold;
-  // public pin_image15 = this.pin_image_gold;
-
   pinClicked(event) {
     var mainContent = document.getElementsByClassName("content")[0];
-    mainContent.classList.add('pin_active');
+    mainContent.classList.add('content_pin_active');
 
     var result = document.getElementsByClassName("pin");
     for (var i = 0; i < result.length; i++) {
@@ -90,21 +68,40 @@ export class HomePage {
     pinelem.classList.remove("pin_inactive");
     // console.log(pinelem);
 
+    var offset_top = pinelem.getBoundingClientRect().top;
+    var offset_left = pinelem.getBoundingClientRect().left;
+
     var pin_menu = document.getElementsByClassName("pin_menu")[0];
-    // pin_menu.style.visibility='visible'
+    pin_menu.classList.remove("pin_menu_inactive");
 
     // now this part stops the click from propagating
     if (!e) var e = window.event;
     e.cancelBubble = true;
     if (e.stopPropagation) e.stopPropagation();
   }
+
   pinReset() {
     var mainContent = document.getElementsByClassName("content")[0];
-    mainContent.classList.remove('pin_active');
+    mainContent.classList.remove('content_pin_active');
 
     var result = document.getElementsByClassName("pin");
     for (var i = 0; i < result.length; i++) {
       result[i].classList.remove('pin_inactive');
     }
+
+    var pin_menu = document.getElementsByClassName("pin_menu")[0];
+    pin_menu.classList.add("pin_menu_inactive");
+  }
+
+  addtoRoute(event) {
+    let pinelem = document.querySelectorAll(".pin:not(.pin_inactive)")[0];
+    pinelem.classList.add("pin_selected");
+    
+    this.pinReset();
+
+    // now this part stops the click from propagating
+    if (!e) var e = window.event;
+    e.cancelBubble = true;
+    if (e.stopPropagation) e.stopPropagation();
   }
 }
