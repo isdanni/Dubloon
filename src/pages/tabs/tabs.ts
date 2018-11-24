@@ -43,49 +43,4 @@ export class TabsPage implements AfterViewInit {
   showToolbar() {
     this.superTabsCtrl.showToolbar(true);
   }
-
-  onTabSelect(ev: any) {
-    console.log('Tab selected', 'Index: ' + ev.index, 'Unique ID: ' + ev.id);
-    if(ev.id === 'route'){
-      this.presentActionSheet();
-    }
-  }
-
-  presentActionSheet() {
-    let actionSheet = this.actionSheetCtrl.create({
-      title: 'Route Menu',
-      buttons: [
-        {
-          text: 'Route Creator',
-          role: 'routeCreator',
-          handler: () => {
-            console.log('Route Creator clicked');
-          }
-        },
-        {
-          text: 'Community Routes',
-          role: 'communityRoutes',
-          handler: () => {
-            console.log('Community Routes clicked');
-          }
-        },
-        {
-          text: 'Famous routes',
-          role: 'famousRoutes',
-          handler: () => {
-            console.log('Famous routes clicked');
-          }
-        },
-        {
-          text: 'Quick Planner',
-          role: 'quickPlanener',
-          handler: () => {
-            console.log('Famous routes clicked');
-          }
-        }
-      ]
-    });
- 
-    actionSheet.present();
-  }
 }
