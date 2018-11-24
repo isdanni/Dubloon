@@ -1,17 +1,7 @@
-<!--<ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="map"></ion-tab>
-
-  <ion-tab [root]="tab2Root" tabTitle="Route" tabIcon="compass"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Camera" tabIcon="camera"></ion-tab>
-  <ion-tab [root]="tab4Root" tabTitle="Social" tabIcon="contacts"></ion-tab>
-  <ion-tab [root]="tab5Root" tabTitle="MyDubloon" tabIcon="settings"></ion-tab>
-
-</ion-tabs>-->
-<super-tabs #SuperTabs tabsPlacement="bottom" (tabSelect)="onTabSelect($event)">
-  <super-tab [root]="tab1Root" icon="pin" id="home"></super-tab>
-  <super-tab [root]="tab2Root" icon="compass" id="route"></super-tab>
-  <super-tab [root]="tab3Root" icon="camera" id="camera"></super-tab>
-  <super-tab [root]="tab4Root" icon="people" id="social"></super-tab>
-  <super-tab [root]="tab5Root" icon="trophy" id="myDubloon"></super-tab>
-</super-tabs>
-
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabIcon="pin"></ion-tab>
+  <ion-tab [root]="tab1Root" tabIcon="compass"></ion-tab>
+  <ion-tab [root]="tab3Root" tabIcon="camera"></ion-tab>
+  <ion-tab [root]="tab4Root" tabIcon="people"></ion-tab>
+  <ion-tab [root]="tab5Root" tabIcon="trophy"></ion-tab>
+</ion-tabs>

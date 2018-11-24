@@ -16,7 +16,7 @@ export class TabsPage implements AfterViewInit {
   @ViewChild("SuperTabs") superTabs: any;
 
   tab1Root = HomePage;
-  tab2Root = RoutePage;
+  // tab2Root = RoutePage;
   tab3Root = CameraPage;
   tab4Root = SocialPage;
   tab5Root = SettingsPage;
