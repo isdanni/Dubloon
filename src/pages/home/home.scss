@@ -3,7 +3,7 @@ page-home {
         overflow: hidden;
       }
     
-    .content {
+    > .content {
         background: radial-gradient(
           rgba(0, 0, 0, 0.1), 
           rgba(0, 0, 0, 0.2)
@@ -117,6 +117,10 @@ page-home {
                             img {
                                 width: 34px;
                                 height: 34px;
+                                -webkit-transition: all 0.5s ease;
+                                -moz-transition: all 0.5s ease;
+                                -o-transition: all 0.5s ease;
+                                transition: all 0.5s ease;
                             }
                         }
                     }
@@ -141,7 +145,7 @@ page-home {
                             min-width: 28px;
                             min-height: 28px;
 
-                            img{
+                            img {
                                 width: 28px;
                                 height: 28px;
                             }
@@ -159,19 +163,25 @@ page-home {
 
             &.pin_gold {
                 background-image: url("./../../assets/imgs/GoldenPin.png");
-                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position-y: bottom;
             }
             &.pin_silver {
                 background-image: url("./../../assets/imgs/SilverPin.png");
-                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position-y: bottom;
             }
             &.pin_bronze {
                 background-image: url("./../../assets/imgs/BronzePin.png");
-                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position-y: bottom;
             }
             &.pin_inactive {
                 background-image: url("./../../assets/imgs/001-maps-and-flags.png");
-                background-size: cover;
+                // background-size: cover;
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position-y: bottom;
