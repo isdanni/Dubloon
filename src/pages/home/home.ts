@@ -91,7 +91,7 @@ export class HomePage {
     // console.log(pinelem);
 
     var pin_menu = document.getElementsByClassName("pin_menu")[0];
-    pin_menu.style.visibility='visible'
+    // pin_menu.style.visibility='visible'
 
     // now this part stops the click from propagating
     if (!e) var e = window.event;
