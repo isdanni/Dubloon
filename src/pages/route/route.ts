@@ -48,4 +48,7 @@ export class RoutePage {
     this.nowState = DrawerState.Docked;
   }
 
+  routeGenerator(event: any) {
+  	console.log('ionViewDidLoad RoutePage');
+  }
 }
