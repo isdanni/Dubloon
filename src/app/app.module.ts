@@ -17,6 +17,8 @@ import { SuperTabsModule } from 'ionic2-super-tabs';
 import { IonBottomDrawerModule } from 'ion-bottom-drawer';
 import { GlobalParamsProvider } from '../providers/global-params/global-params';
 
+import { SwipeCardsModule } from 'ng2-swipe-cards';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -32,7 +34,8 @@ import { GlobalParamsProvider } from '../providers/global-params/global-params';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     SuperTabsModule.forRoot(),
-    IonBottomDrawerModule
+    IonBottomDrawerModule,
+    SwipeCardsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
