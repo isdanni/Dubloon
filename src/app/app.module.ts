@@ -16,6 +16,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SuperTabsModule } from 'ionic2-super-tabs';
 import { IonBottomDrawerModule } from 'ion-bottom-drawer';
 
+import { SwipeCardsModule } from 'ng2-swipe-cards';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -31,7 +33,8 @@ import { IonBottomDrawerModule } from 'ion-bottom-drawer';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     SuperTabsModule.forRoot(),
-    IonBottomDrawerModule
+    IonBottomDrawerModule,
+    SwipeCardsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
