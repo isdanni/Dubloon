@@ -6,7 +6,7 @@ import { CameraPage } from '../camera/camera';
 import { SocialPage } from '../social/social';
 import { SettingsPage } from '../settings/settings';
 import { SuperTabsController } from 'ionic2-super-tabs';
-import { ActionSheetController } from 'ionic-angular';
+import { ActionSheetController, Events } from 'ionic-angular';
 import { RoutePage } from '../route/route';
 
 @Component({
@@ -25,10 +25,16 @@ export class TabsPage implements AfterViewInit {
   
   constructor(
     private superTabsCtrl: SuperTabsController,
-    public actionSheetCtrl: ActionSheetController
+    public actionSheetCtrl: ActionSheetController,
+    public events: Events
   ) {
     this.superTabsCtrl.enableTabsSwipe(false, 'route');
     
+  }
+
+  init(){
+    console.log('gogogo');
+    this.events.publish('page:init');
   }
 
   ngAfterViewInit() {
