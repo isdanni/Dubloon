@@ -8,11 +8,10 @@
 <ion-header>
 </ion-header>
 
-
-<ion-content padding>
+<ion-content padding (click)="pinReset();">
 	<ion-searchbar placeholder = "Where to, Captain?" spellcheck = true ></ion-searchbar>
 
-	<ion-item>
+	<!-- <ion-item>
 		<ion-avatar>
 			<img src="./../../assets/imgs/icon7.png">
 		</ion-avatar>
@@ -28,38 +27,55 @@
 		<ion-avatar>
 			<img src="./../../assets/imgs/icon8.png">
 		</ion-avatar>
-	</ion-item>
+	</ion-item> -->
 
-	<!-- <ion-slides slidesPerView="5" spaceBetween="10"	loop (ionSlideDidChange)="slideChanged()">
+	<ion-slides slidesPerView="5" spaceBetween="10"	loop zoom [centeredSlides]="true" (ionSlideDidChange)="slideChange($event)">
 		<ion-slide>
 			<ion-avatar>
-				<img src="./../../assets/imgs/icon7.png">
-			</ion-avatar>
-		</ion-slide>
-
-		<ion-slide>
-			<ion-avatar class="sibling">
-				<img src="./../../assets/imgs/icon5.png">
-			</ion-avatar>
-		</ion-slide>
-
-		<ion-slide>
-			<ion-avatar class="selected">
-				<img src="./../../assets/imgs/icon2.png">
+				<img src="./../../assets/imgs/004-jewelry-store.png">
 			</ion-avatar>
 		</ion-slide>
 		<ion-slide>
-			<ion-avatar class="sibling">
-				<img src="./../../assets/imgs/icon6.png">
+			<ion-avatar>
+				<img src="./../../assets/imgs/001-restaurant.png">
 			</ion-avatar>
 		</ion-slide>
-
 		<ion-slide>
 			<ion-avatar>
 				<img src="./../../assets/imgs/icon8.png">
 			</ion-avatar>
 		</ion-slide>
-</ion-slides> -->
+		<ion-slide>
+			<ion-avatar>
+				<img src="./../../assets/imgs/002-library.png">
+			</ion-avatar>
+		</ion-slide>
+		<ion-slide>
+			<ion-avatar>
+				<img src="./../../assets/imgs/003-fireworks.png">
+			</ion-avatar>
+		</ion-slide>
+</ion-slides>
 
-	<ion-icon class="pin_gold" name="pin"></ion-icon>
+<div class="pin_menu" *ngIf="hideMe">
+	<ion-icon name="add"></ion-icon>
+	<ion-icon name="menu"></ion-icon>
+</div>
+
+<div class="pin1 pin_bronze pin" (click)="pinClicked($event);"> </div>
+<div class="pin2 pin_bronze pin" (click)="pinClicked($event);"> </div>
+<div class="pin3 pin_bronze pin" (click)="pinClicked($event);"></div>
+<div class="pin4 pin_bronze pin" (click)="pinClicked($event);"></div>
+<div class="pin5 pin_bronze pin" (click)="pinClicked($event);"></div>
+<div class="pin6 pin_bronze pin" (click)="pinClicked($event);"></div>
+<div class="pin7 pin_bronze pin" (click)="pinClicked($event);"></div>
+<div class="pin8 pin_bronze pin" (click)="pinClicked($event);"></div>
+<div class="pin9 pin_silver pin" (click)="pinClicked($event);"></div>
+<div class="pin10 pin_silver pin" (click)="pinClicked($event);"></div>
+<div class="pin11 pin_silver pin" (click)="pinClicked($event);"></div>
+<div class="pin12 pin_silver pin" (click)="pinClicked($event);"></div>
+<div class="pin13 pin_gold pin" (click)="pinClicked($event);"></div>
+<div class="pin14 pin_gold pin" (click)="pinClicked($event);"></div>
+<div class="pin15 pin_gold pin" (click)="pinClicked($event);"></div>
+
 </ion-content>

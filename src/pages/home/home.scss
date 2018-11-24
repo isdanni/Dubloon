@@ -4,16 +4,25 @@ page-home {
       }
     
     .content {
-        background: linear-gradient(
-          rgba(0, 0, 0, 0.2), 
+        background: radial-gradient(
+          rgba(0, 0, 0, 0.1), 
           rgba(0, 0, 0, 0.2)
         ), url("./../../assets/imgs/map.png");
         background-repeat: no-repeat;
         background-position-x: center;
         background-size: cover;
 
+        &.pin_active {
+            background: radial-gradient(
+                rgba(0, 0, 0, 0.3), 
+                rgba(0, 0, 0, 0.7)
+            ), url("./../../assets/imgs/map.png");
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-size: cover;
+        }
         ion-searchbar.searchbar {
-            padding: 0;
+            // padding: 0;
             width: 85%;
             margin: 0 auto;
             margin-top: 40px;
@@ -90,31 +99,143 @@ page-home {
                 ion-slide {
                     vertical-align: middle;
                     display: inline-block;
+                    // margin: 0 !important;
                 
+                    &.swiper-slide-active {
+                        // min-width: 34px;
+                        // min-height: 34px;
+                        // box-shadow: 0px 0px 5px 5px #fff;
+                        // border-radius: 50%;
+                        // overflow: hidden;
+                        width: 50px !important;
+                        overflow: visible;
+
+                        ion-avatar {
+                            box-shadow: 0px 0px 5px 5px #fff;
+                            border-radius: 50%;
+                        
+                            img {
+                                width: 34px;
+                                height: 34px;
+                            }
+                        }
+                    }
+
                     ion-avatar {
+                        vertical-align: middle;
                         display: inline-block;
                         border-radius: 50%; 
                         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                         // margin: 0 5px;
                         background-color: white;
-                        // min-width: 15px;
-                        // min-height: 15px;
+                        min-width: 15px;
+                        min-height: 15px;
                         padding: 3px;
 
                         img {
                             width: 15px;
                             height: 15px;
                         }
-                    }
 
-                    &.swiper-slide-active {
-                        img {
-                            width: 35px;
-                            height: 35px;
+                        &.sibling {
+                            min-width: 28px;
+                            min-height: 28px;
+
+                            img{
+                                width: 28px;
+                                height: 28px;
+                            }
                         }
-
                     }
                 }
+            }
+        }
+
+        .pin {
+            position: relative;
+            width: 30px;
+            height: 37px;
+            display: inline-block;
+
+            &.pin_gold {
+                background-image: url("./../../assets/imgs/GoldenPin.png");
+                background-size: cover;
+            }
+            &.pin_silver {
+                background-image: url("./../../assets/imgs/SilverPin.png");
+                background-size: cover;
+            }
+            &.pin_bronze {
+                background-image: url("./../../assets/imgs/BronzePin.png");
+                background-size: cover;
+            }
+            &.pin_inactive {
+                background-image: url("./../../assets/imgs/001-maps-and-flags.png");
+                background-size: cover;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position-y: bottom;
+            }
+
+            &.pin1 {
+                top: 100px;
+                // left: 123px;
+            }
+            &.pin2 {
+                top: 150px;
+                // left: 100px;
+            }
+            &.pin3 {
+                top: 306px;
+                // left: 150px;
+            }
+            &.pin4 {
+                top: 210px;
+                // left: 150px;
+            }
+            &.pin5 {
+                top: 220px;
+                // left: 180px;
+            }
+            &.pin6 {
+                top: 100px;
+                // left: 100px;
+            }
+            &.pin7 {
+                top: 150px;
+                // left: 100px;
+            }
+            &.pin8 {
+                top: 100px;
+                // left: 150px;
+            }
+            &.pin9 {
+                top: 210px;
+                // left: 50px;
+            }
+            &.pin10 {
+                top: 220px;
+                // left: 18px;
+            }
+            &.pin11 {
+                top: 100px;
+                // left: 51x;
+            }
+            &.pin12 {
+                top: 167px;
+                // left: 33px;
+            }
+            &.pin13 {
+                top: 50px;
+                // left: 98px;
+            }
+            &.pin14 {
+                top: 207px;
+                // left: 80px;
+            }
+            &.pin15 {
+                top: 220px;
+                // left: 180px;
             }
         }
     }
