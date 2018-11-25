@@ -42,7 +42,8 @@ export class RoutePage {
   }
 
   navigateToOtherPage(): void {
-    this.navCtrl.push(CameraPage);
+    // this.navCtrl.push(CameraPage);
+    this.globalParamsProvider.nav.push(CameraPage);
   }
 
   ionViewDidLoad() {
@@ -59,13 +60,15 @@ export class RoutePage {
   }
 
   routeGenerator() {
-  	this.navCtrl.push(MyApp);
+    // this.navCtrl.push(MyApp);
+    this.globalParamsProvider.nav.push(MyApp);
   }
 
   stateChange(state){
     console.log(this.nowState);
     if(this.nowState === 0){
       this.globalParamsProvider.nav.push(MyApp);
+      this.navCtrl.push(MyApp);
     }
   }
 }
