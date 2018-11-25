@@ -28,15 +28,15 @@ export class CameraPage {
       }
   };
   
-  images=["/assets/imgs/logo.png", 
+  images=["/assets/imgs/swipe1.png", 
       "/assets/imgs/swipe2.png",
       "/assets/imgs/swipe3.png",
+      "/assets/imgs/swipe8.png",
+      "/assets/imgs/swipe9.png",
       "/assets/imgs/swipe4.png",
       "/assets/imgs/swipe5.png",
       "/assets/imgs/swipe6.png",
-      "/assets/imgs/swipe7.png",
-      "/assests/imgs/swipe8.png",
-      "/assests/imgs/swipe9.png"
+      "/assets/imgs/swipe7.png"
      ]
   constructor(public sanitizer: DomSanitizer) {
     for (let i = 0; i < this.images.length; i++) {
