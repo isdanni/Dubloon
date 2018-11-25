@@ -1,5 +1,6 @@
 page-camera {
 
+<<<<<<< HEAD
 
     ion-content {
         background: radial-gradient(
@@ -20,4 +21,23 @@ page-camera {
 
  }
 
+=======
+  > ion-content {
+    background: radial-gradient(
+      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.2)
+    ), url("./../../assets/imgs/map.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: cover;
+
+    .card-container{
+      display: flex;
+      flex-direction: column;
+      width: 100% !important;
+      height: 480px;
+      margin:0 !important;
+    }        
+  }
+>>>>>>> ce907b1733281f759338fe80e00201c8cc74a869
 }
