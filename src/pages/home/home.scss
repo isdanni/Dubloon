@@ -1,9 +1,9 @@
 page-home {
     .scroll-content {
         overflow: hidden;
-      }
+    }
     
-    > ion-content {
+    ion-content {
         background: radial-gradient(
           rgba(0, 0, 0, 0.1), 
           rgba(0, 0, 0, 0.2)
@@ -21,8 +21,8 @@ page-home {
             background-position-x: center;
             background-size: cover;
         }
-        ion-searchbar.searchbar {
-            // padding: 0;
+
+        ion-searchbar.searchbar, ion-searchbar.searchbar-ios {
             width: 85%;
             margin: 0 auto;
             margin-top: 40px;
@@ -30,60 +30,6 @@ page-home {
             .searchbar-input-container{      
                 .searchbar-input{
                     border-radius: 0px;
-                }
-            }
-        }
-
-        ion-item.item.item-block {
-            text-align: center;
-            background: none;
-            padding: 0;
-            
-             .item-inner {
-                padding: 0;
-                border: none;
-
-                .label {
-                    margin-right: 0;
-                    overflow: visible;
-                    
-                    ion-avatar {
-                        vertical-align: middle;
-                        display: inline-block;
-                        border-radius: 50%; 
-                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                        margin: 0 5px;
-                        background-color: white;
-                        min-width: 15px;
-                        min-height: 15px;
-                        padding: 3px;
-
-                        img {
-                            width: 15px;
-                            height: 15px;
-                        }
-
-                        &.selected{
-                            min-width: 40px;
-                            min-height: 40px;
-                            box-shadow: 0px 0px 5px 5px #fff;
-
-                            img{
-                                width: 40px;
-                                height: 40px;
-                            }
-                        }
-
-                        &.sibling {
-                            min-width: 30px;
-                            min-height: 30px;
-
-                            img{
-                                width: 30px;
-                                height: 30px;
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -99,14 +45,8 @@ page-home {
                 ion-slide {
                     vertical-align: middle;
                     display: inline-block;
-                    // margin: 0 !important;
                 
                     &.swiper-slide-active {
-                        // min-width: 34px;
-                        // min-height: 34px;
-                        // box-shadow: 0px 0px 5px 5px #fff;
-                        // border-radius: 50%;
-                        // overflow: hidden;
                         width: 50px !important;
                         overflow: visible;
 
@@ -130,7 +70,6 @@ page-home {
                         display: inline-block;
                         border-radius: 50%; 
                         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                        // margin: 0 5px;
                         background-color: white;
                         min-width: 15px;
                         min-height: 15px;
@@ -181,13 +120,12 @@ page-home {
             }
             &.pin_inactive {
                 background-image: url("./../../assets/imgs/001-maps-and-flags.png");
-                // background-size: cover;
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position-y: bottom;
             }
             &.pin_selected {
-                border-bottom: 1px solid black;
+                border: 1px solid black;
                 border-radius: 50%;
             }
 
@@ -254,17 +192,9 @@ page-home {
         }
 
         .pin_menu {
-            // display: block;
             position:fixed;
             top: 359px;
             left: 165px;
-
-            // width:30em;
-            // height:18em;
-            // margin-top: -9em; /*set to a negative number 1/2 of your height*/
-            // margin-left: -15em; /*set to a negative number 1/2 of your width*/
-            // border: 1px solid #ccc;
-            // background-color: #f3f3f3;
 
             &.pin_menu_inactive {
                 display: none;
@@ -281,6 +211,77 @@ page-home {
                 &.plus {
                     color: green;
                 }
+            }
+        }
+
+        .pin8_menu {
+            position:fixed;
+            top: 238px;
+            left: 237px;
+
+            &.pin_menu_inactive {
+                display: none;
+            }
+
+            ion-icon {
+                background-color: rgba(255, 255, 255, 0.8);
+                width: 30px;
+                height: 30px;
+                font-size: 30px;
+                text-align: center;
+                font-weight: bold;
+
+                &.plus {
+                    color: green;
+                }
+            }
+        }
+
+        .path {
+            // stroke-dasharray: 1000;
+            // stroke-dashoffset: 1000;
+            // animation: dash 5s linear forwards;
+        }
+
+        .path-animation {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear 1;
+            stroke:#fff;
+        }
+        
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        ion-card.loc_intro, ion-card.loc8_intro {
+
+            ion-card-content {
+                overflow: auto;
+
+                .loc_intro_pic {
+                    vertical-align: middle;
+                    display: table-cell;
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .loc_intro_text {
+                    font-size: 11px;
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding-left: 10px;
+
+                    p {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            &.hide {
+                display: none;
             }
         }
     }

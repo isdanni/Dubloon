@@ -25,7 +25,6 @@ export class HomePage {
   }
 
   @ViewChild(Slides) slides: Slides;
-  // @ViewChild('ion-slide') elem: any;
 
   slideChange(slides) {
     let currentIndex = slides.getActiveIndex();
@@ -68,11 +67,40 @@ export class HomePage {
     pinelem.classList.remove("pin_inactive");
     // console.log(pinelem);
 
-    var offset_top = pinelem.getBoundingClientRect().top;
-    var offset_left = pinelem.getBoundingClientRect().left;
+    // var offset_top = pinelem.getBoundingClientRect().top;
+    // var offset_left = pinelem.getBoundingClientRect().left;
+    // console.log("offset_top: "+offset_top);
+    // console.log("offset_left: "+offset_left);
 
     var pin_menu = document.getElementsByClassName("pin_menu")[0];
     pin_menu.classList.remove("pin_menu_inactive");
+
+    var loc_intro = document.getElementsByClassName("loc_intro")[0];
+    loc_intro.classList.remove("hide");
+
+    // now this part stops the click from propagating
+    if (!e) var e = window.event;
+    e.cancelBubble = true;
+    if (e.stopPropagation) e.stopPropagation();
+  }
+
+  pin8Clicked(event) {
+    var mainContent = document.getElementsByClassName("content")[0];
+    mainContent.classList.add('content_pin_active');
+
+    var result = document.getElementsByClassName("pin");
+    for (var i = 0; i < result.length; i++) {
+      result[i].classList.add('pin_inactive');
+    }
+
+    let pinelem = event.srcElement;
+    pinelem.classList.remove("pin_inactive");
+
+    var pin_menu = document.getElementsByClassName("pin8_menu")[0];
+    pin_menu.classList.remove("pin_menu_inactive");
+
+    var loc_intro = document.getElementsByClassName("loc8_intro")[0];
+    loc_intro.classList.remove("hide");
 
     // now this part stops the click from propagating
     if (!e) var e = window.event;
@@ -91,12 +119,27 @@ export class HomePage {
 
     var pin_menu = document.getElementsByClassName("pin_menu")[0];
     pin_menu.classList.add("pin_menu_inactive");
+
+    var pin8_menu = document.getElementsByClassName("pin8_menu")[0];
+    pin8_menu.classList.add("pin_menu_inactive");
+
+    var loc_intro = document.getElementsByClassName("loc_intro")[0];
+    loc_intro.classList.add("hide");
+
+    var loc8_intro = document.getElementsByClassName("loc8_intro")[0];
+    loc8_intro.classList.add("hide");
   }
 
   addtoRoute(event) {
     let pinelem = document.querySelectorAll(".pin:not(.pin_inactive)")[0];
     pinelem.classList.add("pin_selected");
     
+    if (document.getElementsByClassName("pin_selected").length > 1)
+    {
+      let pathelem = document.getElementsByClassName("newroute")[0];
+      pathelem.classList.add("path-animation");
+    }
+
     this.pinReset();
 
     // now this part stops the click from propagating
