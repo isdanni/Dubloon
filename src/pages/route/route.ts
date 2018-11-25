@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavParams, NavController } from 'ionic-angular';
 import { DrawerState } from 'ion-bottom-drawer';
-import { Events } from 'ionic-angular';
+import { Events, NavController } from 'ionic-angular';
 import { GlobalParamsProvider } from '../../providers/global-params/global-params';
+import { CameraPage } from '../camera/camera';
 import { MyApp } from '../../app/app.component';
+
+
 
 /**
  * Generated class for the RoutePage page.
@@ -29,7 +32,8 @@ export class RoutePage {
   constructor(
     public navParams: NavParams,
     public events: Events,
-    private globalParamsProvider: GlobalParamsProvider
+    private globalParamsProvider: GlobalParamsProvider,
+    public navCtrl: NavController
     ) 
     {
 
@@ -37,6 +41,10 @@ export class RoutePage {
         // user and time are the same arguments passed in `events.publish(user, time)`
         this.ionViewDidLoad();
       });
+  }
+
+  navigateToOtherPage(): void {
+    this.navCtrl.push(CameraPage);
   }
 
   ionViewDidLoad() {
