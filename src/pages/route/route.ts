@@ -4,7 +4,6 @@ import { DrawerState } from 'ion-bottom-drawer';
 import { GlobalParamsProvider } from '../../providers/global-params/global-params';
 import { CameraPage } from '../camera/camera';
 import { MyApp } from '../../app/app.component';
-import { HomePage } from '../home/home';
 
 
 /**
