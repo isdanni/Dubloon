@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams, NavController } from 'ionic-angular';
 import { DrawerState } from 'ion-bottom-drawer';
 import { Events } from 'ionic-angular';
 import { GlobalParamsProvider } from '../../providers/global-params/global-params';
 import { MyApp } from '../../app/app.component';
+
 /**
  * Generated class for the RoutePage page.
  *
