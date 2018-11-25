@@ -1,7 +1,5 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
-
 import { HomePage } from '../home/home';
-
 import { CameraPage } from '../camera/camera';
 import { SocialPage } from '../social/social';
 import { SettingsPage } from '../settings/settings';
@@ -19,7 +17,6 @@ export class TabsPage implements AfterViewInit {
   tab3Root = CameraPage;
   tab4Root = SocialPage;
   tab5Root = SettingsPage;
-
   
   constructor(
     private superTabsCtrl: SuperTabsController,
@@ -27,14 +24,11 @@ export class TabsPage implements AfterViewInit {
     public events: Events
   ) {
     this.superTabsCtrl.enableTabsSwipe(false, 'route');
-    
   }
 
   init(){
     this.events.publish('page:init');
   }
-
-  
 
   ngAfterViewInit() {
     // must wait for AfterViewInit if you want to modify the tabs instantly
