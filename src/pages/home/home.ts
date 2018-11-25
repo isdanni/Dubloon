@@ -108,6 +108,30 @@ export class HomePage {
     if (e.stopPropagation) e.stopPropagation();
   }
 
+  pin15Clicked(event) {
+    var mainContent = document.getElementsByClassName("content")[0];
+    mainContent.classList.add('content_pin_active');
+
+    var result = document.getElementsByClassName("pin");
+    for (var i = 0; i < result.length; i++) {
+      result[i].classList.add('pin_inactive');
+    }
+
+    let pinelem = event.srcElement;
+    pinelem.classList.remove("pin_inactive");
+
+    var pin_menu = document.getElementsByClassName("pin15_menu")[0];
+    pin_menu.classList.remove("pin_menu_inactive");
+
+    var loc_intro = document.getElementsByClassName("loc15_intro")[0];
+    loc_intro.classList.remove("hide");
+
+    // now this part stops the click from propagating
+    if (!e) var e = window.event;
+    e.cancelBubble = true;
+    if (e.stopPropagation) e.stopPropagation();
+  }
+
   pinReset() {
     var mainContent = document.getElementsByClassName("content")[0];
     mainContent.classList.remove('content_pin_active');
@@ -123,18 +147,24 @@ export class HomePage {
     var pin8_menu = document.getElementsByClassName("pin8_menu")[0];
     pin8_menu.classList.add("pin_menu_inactive");
 
+    var pin15_menu = document.getElementsByClassName("pin15_menu")[0];
+    pin15_menu.classList.add("pin_menu_inactive");
+
     var loc_intro = document.getElementsByClassName("loc_intro")[0];
     loc_intro.classList.add("hide");
 
     var loc8_intro = document.getElementsByClassName("loc8_intro")[0];
     loc8_intro.classList.add("hide");
+
+    var loc15_intro = document.getElementsByClassName("loc15_intro")[0];
+    loc15_intro.classList.add("hide");
   }
 
   addtoRoute(event) {
     let pinelem = document.querySelectorAll(".pin:not(.pin_inactive)")[0];
     pinelem.classList.add("pin_selected");
     
-    if (document.getElementsByClassName("pin_selected").length > 1)
+    if (document.getElementsByClassName("pin_selected").length > 2)
     {
       let pathelem = document.getElementsByClassName("newroute")[0];
       pathelem.classList.add("path-animation");

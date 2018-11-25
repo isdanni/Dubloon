@@ -39,6 +39,11 @@
 		<ion-icon class="menu" name="menu"></ion-icon>
 	</div>
 
+	<div class="pin15_menu pin_menu_inactive">
+		<ion-icon class="plus" name="add" (click)="addtoRoute($event);"></ion-icon>
+		<ion-icon class="menu" name="menu"></ion-icon>
+	</div>
+
 	<div class="pin1 pin_bronze pin"> </div>
 	<div class="pin2 pin_bronze pin"> </div>
 	<div class="pin3 pin_bronze pin"></div>
@@ -53,7 +58,7 @@
 	<div class="pin12 pin_silver pin"></div>
 	<div class="pin13 pin_gold pin"></div>
 	<div class="pin14 pin_gold pin"></div>
-	<div class="pin15 pin_gold pin"></div>
+	<div class="pin15 pin_gold pin" (click)="pin15Clicked($event);"></div>
 
 	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="340px" height="333px" viewBox="0 0 340 333" enable-background="new 0 0 340 333" xml:space="preserve">
 		<!-- <path class="path" fill="#FFFFFF" fill-opacity="0.0" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" 
@@ -87,6 +92,13 @@
 	</ion-card>
 	
 	<ion-card class="loc8_intro hide">
+		<ion-card-content>
+			<div class="loc_intro_pic"><img src="./../../assets/imgs/Cattle_Depot_Artist_Village.jpg"></div>
+			<div class="loc_intro_text"><p>Cattle Depot Artist Village</p>
+				Cattle Depot Artist Village is located on 63 Ma Tau Kok Road. The site was originally used as a slaughterhouse from 1908 to 1999...</div>
+		</ion-card-content>
+	</ion-card>
+	<ion-card class="loc15_intro hide">
 		<ion-card-content>
 			<div class="loc_intro_pic"><img src="./../../assets/imgs/Cattle_Depot_Artist_Village.jpg"></div>
 			<div class="loc_intro_text"><p>Cattle Depot Artist Village</p>
