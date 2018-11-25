@@ -7,7 +7,6 @@ import { CameraPage } from '../camera/camera';
 import { MyApp } from '../../app/app.component';
 
 
-
 /**
  * Generated class for the RoutePage page.
  *
