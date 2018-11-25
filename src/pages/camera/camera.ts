@@ -36,7 +36,8 @@ export class CameraPage {
       "/assets/imgs/swipe4.png",
       "/assets/imgs/swipe5.png",
       "/assets/imgs/swipe6.png",
-      "/assets/imgs/swipe7.png"
+      "/assets/imgs/swipe7.png",
+      "/assets/imgs/swipefinal.png"
      ]
   constructor(public sanitizer: DomSanitizer) {
     for (let i = 0; i < this.images.length; i++) {
