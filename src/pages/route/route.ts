@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavParams, NavController } from 'ionic-angular';
+import { IonicPage, NavParams, Events, NavController } from 'ionic-angular';
 import { DrawerState } from 'ion-bottom-drawer';
-import { Events, NavController } from 'ionic-angular';
 import { GlobalParamsProvider } from '../../providers/global-params/global-params';
 import { CameraPage } from '../camera/camera';
 import { MyApp } from '../../app/app.component';
