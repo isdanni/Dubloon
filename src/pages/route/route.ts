@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavParams, Events, NavController } from 'ionic-angular';
+import { IonicPage, Events, NavParams, NavController } from 'ionic-angular';
 import { DrawerState } from 'ion-bottom-drawer';
 import { GlobalParamsProvider } from '../../providers/global-params/global-params';
 import { CameraPage } from '../camera/camera';
@@ -58,8 +58,8 @@ export class RoutePage {
     this.nowState = DrawerState.Docked;
   }
 
-  routeGenerator(event: any) {
-  	console.log('ionViewDidLoad RoutePage');
+  routeGenerator() {
+  	this.navCtrl.push(MyApp);
   }
 
   stateChange(state){
