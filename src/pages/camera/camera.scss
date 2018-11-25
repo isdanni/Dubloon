@@ -1,5 +1,6 @@
 page-camera {
 
+<<<<<<< HEAD
   > ion-content {
         background: radial-gradient(
           rgba(0, 0, 0, 0.1), 
@@ -8,6 +9,15 @@ page-camera {
         background-repeat: no-repeat;
         background-position-x: center;
         background-size: cover;
+=======
+  .card-container{
+     display: flex;
+     flex-direction: column;
+     width: 100% !important;
+     height: 480px;
+     margin:0 !important;
+  }
+>>>>>>> refs/remotes/origin/master
 
         
         }
