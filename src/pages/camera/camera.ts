@@ -27,25 +27,26 @@ export class CameraPage {
           backgroundColor: '#e92828'
       }
   };
-
-  images=["./../src/assests/imgs/logo.png", 
-      "./../../assests/imgs/swipe2.png",
-      "./../../assests/imgs/swipe3.png",
-      "./../../assests/imgs/swipe4.png",
-      "./../../assests/imgs/swipe5.png",
-      "./../../assests/imgs/swipe6.png",
-      "./../../assests/imgs/swipe7.png",
-      "./../../assests/imgs/swipe8.png",
-      "./../../assests/imgs/swipe9.png"
+  
+  images=["/assets/imgs/logo.png", 
+      "/assets/imgs/swipe2.png",
+      "/assets/imgs/swipe3.png",
+      "/assets/imgs/swipe4.png",
+      "/assets/imgs/swipe5.png",
+      "/assets/imgs/swipe6.png",
+      "/assets/imgs/swipe7.png",
+      "/assests/imgs/swipe8.png",
+      "/assests/imgs/swipe9.png"
      ]
-
   constructor(public sanitizer: DomSanitizer) {
     for (let i = 0; i < this.images.length; i++) {
           this.attendants.push({
               id: i + 1,
               likeEvent: new EventEmitter(),
               destroyEvent: new EventEmitter(),
-              asBg: sanitizer.bypassSecurityTrustStyle('url('+this.images[i]+')')
+              img: this.images[i],
+              asBg: {'background-image': 'url(' + this.images[i] + ')'}
+              // asBg: sanitizer.bypassSecurityTrustStyle('url('+this.images[i]+')')
           });
       }
 
