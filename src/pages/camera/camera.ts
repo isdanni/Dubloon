@@ -1,8 +1,6 @@
-import { Component, EventEmitter } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { DomSanitizer } from '@angular/platform-browser';
-
-
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 /**
  * Generated class for the CameraPage page.
  *
@@ -16,51 +14,31 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: 'camera.html',
 })
 export class CameraPage {
-  ready = false;
-  attendants = [];
-  cardDirection = "xy";
-  cardOverlay: any = {
-      like: {
-          backgroundColor: '#28e93b'
-      },
-      dislike: {
-          backgroundColor: '#e92828'
-      }
-  };
-  
-  images=["/assets/imgs/swipe1.png", 
-      "/assets/imgs/swipe2.png",
-      "/assets/imgs/swipe3.png",
-      "/assets/imgs/swipe8.png",
-      "/assets/imgs/swipe9.png",
-      "/assets/imgs/swipe4.png",
-      "/assets/imgs/swipe5.png",
-      "/assets/imgs/swipe6.png",
-      "/assets/imgs/swipe7.png",
-      "/assets/imgs/swipefinal.png"
-     ]
-  constructor(public sanitizer: DomSanitizer) {
-    for (let i = 0; i < this.images.length; i++) {
-          this.attendants.push({
-              id: i + 1,
-              likeEvent: new EventEmitter(),
-              destroyEvent: new EventEmitter(),
-              img: this.images[i],
-              asBg: {'background-image': 'url(' + this.images[i] + ')'}
-              // asBg: sanitizer.bypassSecurityTrustStyle('url('+this.images[i]+')')
-          });
-      }
 
-      this.ready = true;
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private camera: Camera
+    ) {
   }
 
-  onCardInteract(event) {
-    console.log(event);
-  }
+  base64Image: string;
 
+  options: CameraOptions = {
+    quality: 100,
+    destinationType: this.camera.DestinationType.FILE_URI,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CameraPage');
+    this.camera.getPicture(this.options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64 (DATA_URL):
+      this.base64Image = 'data:image/jpeg;base64,' + imageData;
+     }, (err) => {
+      // Handle error
+     });
   }
 
 }

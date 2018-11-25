@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, Events, NavParams, NavController } from 'ionic-angular';
 import { DrawerState } from 'ion-bottom-drawer';
+import { TinderPage } from '../tinder/tinder';
 
 /**
  * Generated class for the RoutePage page.
@@ -36,9 +37,10 @@ export class RoutePage {
       });
   }
 
-  navigateToOtherPage(): void {
+  quickPlannerPage(): void {
     this.nowState = DrawerState.Bottom;
-    this.navCtrl.parent.select(3);
+    // this.navCtrl.parent.select(3);
+    this.navCtrl.push(TinderPage);
   }
 
   ionViewDidLoad() {

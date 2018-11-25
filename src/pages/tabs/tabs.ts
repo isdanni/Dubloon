@@ -1,11 +1,12 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { HomePage } from '../home/home';
-import { CameraPage } from '../camera/camera';
+import { TinderPage } from '../tinder/tinder';
 import { SocialPage } from '../social/social';
 import { SettingsPage } from '../settings/settings';
 import { SuperTabsController } from 'ionic2-super-tabs';
 import { ActionSheetController, Events } from 'ionic-angular';
 import { RoutePage } from '../route/route';
+import { CameraPage } from '../camera/camera';
 
 @Component({
   templateUrl: 'tabs.html'
