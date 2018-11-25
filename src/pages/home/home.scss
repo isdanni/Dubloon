@@ -186,8 +186,8 @@ page-home {
                 // left: 80px;
             }
             &.pin15 {
-                top: 220px;
-                // left: 180px;
+                left: 10px;
+                top: 114px;
             }
         }
 
@@ -195,13 +195,14 @@ page-home {
             position:fixed;
             top: 359px;
             left: 165px;
+            z-index: 1;
 
             &.pin_menu_inactive {
                 display: none;
             }
 
             ion-icon {
-                background-color: rgba(255, 255, 255, 0.8);
+                background-color: rgba(255, 255, 255, 0.9);
                 width: 30px;
                 height: 30px;
                 font-size: 30px;
@@ -218,6 +219,31 @@ page-home {
             position:fixed;
             top: 238px;
             left: 237px;
+            z-index: 1;
+
+            &.pin_menu_inactive {
+                display: none;
+            }
+
+            ion-icon {
+                background-color: rgba(255, 255, 255, 0.9);
+                width: 30px;
+                height: 30px;
+                font-size: 30px;
+                text-align: center;
+                font-weight: bold;
+
+                &.plus {
+                    color: green;
+                }
+            }
+        }
+
+        .pin15_menu {
+            position:fixed;
+            top: 300px;
+            left: 145px;
+            z-index: 1;
 
             &.pin_menu_inactive {
                 display: none;
@@ -246,7 +272,7 @@ page-home {
         .path-animation {
             stroke-dasharray: 1000;
             stroke-dashoffset: 1000;
-            animation: dash 5s linear 1;
+            animation: dash 5s linear forwards;
             stroke:#fff;
         }
         
@@ -256,7 +282,7 @@ page-home {
             }
         }
 
-        ion-card.loc_intro, ion-card.loc8_intro {
+        ion-card.loc_intro, ion-card.loc8_intro, ion-card.loc15_intro {
 
             ion-card-content {
                 overflow: auto;
