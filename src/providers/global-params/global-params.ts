@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular/navigation/nav-controller';
+import { DrawerState } from 'ion-bottom-drawer';
+import { Observable } from 'rxjs/Observable';
 
 /*
   Generated class for the GlobalParamsProvider provider.
@@ -9,9 +11,15 @@ import { NavController } from 'ionic-angular';
 */
 @Injectable()
 export class GlobalParamsProvider {
-  nav: NavController;
+  navCtrl: NavController;
+  nowState: DrawerState;
+
   constructor() {
     console.log('Hello GlobalParamsProvider Provider');
+  }
+
+  getNowState(){
+    return this.nowState;
   }
 
 }

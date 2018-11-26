@@ -37,7 +37,7 @@ import { Camera } from '@ionic-native/camera';
     IonicModule.forRoot(MyApp),
     SuperTabsModule.forRoot(),
     IonBottomDrawerModule,
-    SwipeCardsModule
+    SwipeCardsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

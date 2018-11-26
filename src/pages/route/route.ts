@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, Events, NavParams, NavController } from 'ionic-angular';
+import { IonicPage, Events, NavParams } from 'ionic-angular';
 import { DrawerState } from 'ion-bottom-drawer';
 import { TinderPage } from '../tinder/tinder';
-
+import { GlobalParamsProvider } from '../../providers/global-params/global-params';
 /**
  * Generated class for the RoutePage page.
  *
@@ -27,7 +27,7 @@ export class RoutePage {
   constructor(
     public navParams: NavParams,
     public events: Events,
-    private navCtrl: NavController
+    private globalParamProvider: GlobalParamsProvider
     ) 
     {
 
@@ -40,7 +40,7 @@ export class RoutePage {
   quickPlannerPage(): void {
     this.nowState = DrawerState.Bottom;
     // this.navCtrl.parent.select(3);
-    this.navCtrl.push(TinderPage);
+    this.globalParamProvider.navCtrl.push(TinderPage);
   }
 
   ionViewDidLoad() {
@@ -52,13 +52,13 @@ export class RoutePage {
 
   routeGenerator() {
     this.nowState = DrawerState.Bottom;
-    this.navCtrl.parent.select(0);
+    this.globalParamProvider.navCtrl.parent.select(0);
   }
 
   stateChange(state){
     console.log(this.nowState);
     if(this.nowState === 0){
-      this.navCtrl.parent.select(0);
+      this.globalParamProvider.navCtrl.parent.select(0);
     }
   }
 }

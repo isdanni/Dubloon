@@ -1,12 +1,12 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { HomePage } from '../home/home';
-import { TinderPage } from '../tinder/tinder';
 import { SocialPage } from '../social/social';
 import { SettingsPage } from '../settings/settings';
 import { SuperTabsController } from 'ionic2-super-tabs';
 import { ActionSheetController, Events } from 'ionic-angular';
-import { RoutePage } from '../route/route';
 import { CameraPage } from '../camera/camera';
+import { GlobalParamsProvider } from '../../providers/global-params/global-params';
+import { DrawerState } from 'ion-bottom-drawer';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -14,7 +14,7 @@ import { CameraPage } from '../camera/camera';
 export class TabsPage implements AfterViewInit {
 
   tab1Root = HomePage;
-  tab2Root = RoutePage;
+  tab2Root = HomePage;
   tab3Root = CameraPage;
   tab4Root = SocialPage;
   tab5Root = SettingsPage;
@@ -22,13 +22,14 @@ export class TabsPage implements AfterViewInit {
   constructor(
     private superTabsCtrl: SuperTabsController,
     public actionSheetCtrl: ActionSheetController,
-    public events: Events
-  ) {
-    this.superTabsCtrl.enableTabsSwipe(false, 'route');
+    public globalParamsProvider: GlobalParamsProvider,
+    public events: Events) {
   }
 
   init(){
     this.events.publish('page:init');
+    this.globalParamsProvider.nowState = DrawerState.Top;
+    console.log(this.globalParamsProvider.nowState);
   }
 
   ngAfterViewInit() {
