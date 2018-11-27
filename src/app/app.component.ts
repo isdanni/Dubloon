@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { GlobalParamsProvider } from '../providers/global-params/global-params';
 import { DrawerState } from 'ion-bottom-drawer';
+import { TinderPage } from '../pages/tinder/tinder';
 
 @Component({
   templateUrl: 'app.html'
@@ -23,6 +24,8 @@ export class MyApp implements AfterViewInit {
   distanceTop = 56;
   drawerState: DrawerState;
   nowState = DrawerState.Docked;
+
+  first: boolean = true;
 
   constructor(
     platform: Platform, 
@@ -44,6 +47,7 @@ export class MyApp implements AfterViewInit {
       // this.globalParamsProvider.navCtrl.parent.select(0);
       // this.nav.push(TinderPage);
       this.globalParamsProvider.nowState = this.nowState;
+      
     }
   }
 
@@ -51,4 +55,16 @@ export class MyApp implements AfterViewInit {
     this.nowState = DrawerState.Docked;
     return this.globalParamsProvider.getNowState();
   }
+
+  quickPlannerPage(){
+    
+    this.globalParamsProvider.nowState = DrawerState.Bottom;
+    this.nav.push(TinderPage);
+  }
+
+  routeCreator(){
+    this.globalParamsProvider.nowState = DrawerState.Bottom;
+    this.globalParamsProvider.navCtrl.select(0);
+  }
+  
 }

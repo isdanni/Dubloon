@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
+import { GlobalParamsProvider } from '../../providers/global-params/global-params';
 
 /**
  * Generated class for the HomePage page.
@@ -15,9 +16,18 @@ import { Slides } from 'ionic-angular';
   selector: 'page-home',
   templateUrl: 'home.html',
 })
-export class HomePage {
+export class HomePage implements AfterViewInit {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ngAfterViewInit(): void {
+    this.globalParams.navCtrl = this.navCtrl.parent;
+    console.log(this.navCtrl.parent);
+    
+  }
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private globalParams: GlobalParamsProvider) {
   }
 
   ionViewDidLoad() {
