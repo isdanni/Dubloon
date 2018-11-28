@@ -27,6 +27,5 @@ export class TabsPage {
   init(){
     this.events.publish('page:init');
     this.globalParamsProvider.nowState = DrawerState.Top;
-    console.log(this.globalParamsProvider.nowState);
   }
 }

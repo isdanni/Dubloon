@@ -1,28 +1,2 @@
-
-<ion-content *ngIf="getNowState()==0? false: true">
-    <ion-bottom-drawer [(state)]="nowState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight"
-    [shouldBounce]="shouldBounce" [distanceTop]="distanceTop" (stateChange)="stateChange(state)">
-    <div class="drawer-content">
-        <div id="blue_box">
-            <div id="left">
-                <ion-card  (click)="routeCreator()">
-                <img src="/assets/imgs/Route Creator.png"/>
-                </ion-card>
-                <ion-card>
-                    <img src="/assets/imgs/Famous Routes.png"/>
-                </ion-card>
-            </div>
-            <div class="divider"></div>
-            <div id="right">
-                <ion-card>
-                    <img src="/assets/imgs/Community Routes.png"/>
-                </ion-card>
-                <ion-card (click)="quickPlannerPage()">
-                    <img src="/assets/imgs/Quick Planner.png"/>
-                    </ion-card>
-            </div>
-        </div>
-    </div>
-    </ion-bottom-drawer>
-</ion-content>
+<sub-menu [nav]="nav"></sub-menu>
 <ion-nav #nav [root]="rootPage"></ion-nav>

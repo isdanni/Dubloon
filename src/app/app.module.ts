@@ -4,7 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
-import { RoutePage } from '../pages/route/route';
 import { TinderPage } from '../pages/tinder/tinder';
 import { SocialPage } from '../pages/social/social';
 import { SettingsPage } from '../pages/settings/settings';
@@ -20,6 +19,7 @@ import { GlobalParamsProvider } from '../providers/global-params/global-params';
 import { SwipeCardsModule } from 'ng2-swipe-cards';
 import { CameraPage } from '../pages/camera/camera';
 import { Camera } from '@ionic-native/camera';
+import { SubMenuComponent } from '../components/sub-menu/sub-menu';
 
 @NgModule({
   declarations: [
@@ -28,9 +28,9 @@ import { Camera } from '@ionic-native/camera';
     HomePage,
     SocialPage,
     SettingsPage,
-    RoutePage,
     TabsPage,
-    CameraPage
+    CameraPage,
+    SubMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +46,6 @@ import { Camera } from '@ionic-native/camera';
     HomePage,
     SocialPage,
     SettingsPage,
-    RoutePage,
     TabsPage,
     CameraPage
   ],
