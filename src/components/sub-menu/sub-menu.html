@@ -1,4 +1,4 @@
-<ion-content *ngIf="getNowState()==0? false: true">
+<ion-content *ngIf="getNowState()==0? false: true" style="background-color:rgba(0, 0, 0, 0.5);">
     <ion-bottom-drawer [(state)]="nowState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight"
     [shouldBounce]="shouldBounce" [distanceTop]="distanceTop" (stateChange)="stateChange(state)">
     <div class="drawer-content">

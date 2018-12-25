@@ -22,11 +22,11 @@ export class SubMenuComponent  implements AfterViewInit {
   @Input() nav: NavController;
     
   minimumHeight = 0;
-  dockedHeight = 400;
+  dockedHeight = 300;
   shouldBounce = true;
   distanceTop = 56;
   drawerState: DrawerState;
-  nowState = DrawerState.Docked;
+  nowState = DrawerState.Top;
   
   ngAfterViewInit(): void {
     this.globalParams.nowState = DrawerState.Bottom;
@@ -38,7 +38,7 @@ export class SubMenuComponent  implements AfterViewInit {
     this.text = 'Hello World';
   }
 
-  stateChange(state){
+  stateChange(state){    
     if(this.nowState === 0){
       this.globalParams.nowState = this.nowState;
     }
