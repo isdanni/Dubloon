@@ -21,6 +21,7 @@ import { CameraPage } from '../pages/camera/camera';
 import { Camera } from '@ionic-native/camera';
 import { SubMenuComponent } from '../components/sub-menu/sub-menu';
 
+//import { ComponentsModule } from '../components/components.module';
 @NgModule({
   declarations: [
     MyApp,
@@ -38,6 +39,7 @@ import { SubMenuComponent } from '../components/sub-menu/sub-menu';
     SuperTabsModule.forRoot(),
     IonBottomDrawerModule,
     SwipeCardsModule,
+    //ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
