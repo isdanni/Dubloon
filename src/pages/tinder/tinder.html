@@ -17,7 +17,17 @@
   <sc-card padding *ngFor="let attendant of attendants" [orientation]="cardDirection" [tinder-card]="cardOverlay"
     [callDestroy]="attendant.destroyEvent" [callLike]="attendant.likeEvent" (onLike)="onCardInteract($event)">
       <!-- <div class="user_img" [ngStyle]="attendant.asBg">test</div> -->
-      <img [src]="attendant.img">
+     
+    <ion-card>
+       <ion-card-header>
+        <ion-card-title>{{attendant.name}}</ion-card-title>
+      </ion-card-header>
+
+       <ion-card-content>
+         <img [src]="attendant.img">
+         <span>{{attendant.content}} </span>
+      </ion-card-content>
+    </ion-card>
   </sc-card>
 
   </div>
