@@ -39,7 +39,6 @@ import { SubMenuComponent } from '../components/sub-menu/sub-menu';
     SuperTabsModule.forRoot(),
     IonBottomDrawerModule,
     SwipeCardsModule,
-    
     //ComponentsModule,
   ],
   bootstrap: [IonicApp],

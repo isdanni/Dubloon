@@ -24,8 +24,19 @@
       </ion-card-header>
 
        <ion-card-content>
-         <img [src]="attendant.img">
-         <span>{{attendant.content}} </span>
+         
+         <ion-slides pager="true" pager loop autoplay="2000">
+            <ion-slide>
+               <img [src]="attendant.img1">
+            </ion-slide>
+            <ion-slide>
+              <img [src]="attendant.img2">
+            </ion-slide>
+            <ion-slide>
+              <img [src]="attendant.img3">
+            </ion-slide>
+          </ion-slides>
+         <span style="font-size:8px;">{{attendant.content}} </span>
       </ion-card-content>
     </ion-card>
   </sc-card>
