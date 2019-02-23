@@ -21,6 +21,8 @@ import { CameraPage } from '../pages/camera/camera';
 import { Camera } from '@ionic-native/camera';
 import { SubMenuComponent } from '../components/sub-menu/sub-menu';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 //import { ComponentsModule } from '../components/components.module';
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { SubMenuComponent } from '../components/sub-menu/sub-menu';
     StatusBar,
     SplashScreen,
     Camera,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GlobalParamsProvider
   ]

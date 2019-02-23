@@ -1,314 +1,359 @@
 page-home {
-    .scroll-content {
-        overflow: hidden;
+  .scroll {
+    height: 100%
+  }
+
+  #map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .scroll-content {
+    overflow: hidden;
+  }
+
+  #floating-panel {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto', 'sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+  }
+
+  #map {
+    height: 100%;
+  }
+
+  ion-content {
+    background: radial-gradient(rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.2)), url("./../../assets/imgs/map.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: cover;
+
+    &.content_pin_active {
+      background: radial-gradient(rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.7)), url("./../../assets/imgs/map.png");
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-size: cover;
     }
-    
-    ion-content {
-        background: radial-gradient(
-          rgba(0, 0, 0, 0.1), 
-          rgba(0, 0, 0, 0.2)
-        ), url("./../../assets/imgs/map.png");
-        background-repeat: no-repeat;
-        background-position-x: center;
-        background-size: cover;
 
-        &.content_pin_active {
-            background: radial-gradient(
-                rgba(0, 0, 0, 0.3), 
-                rgba(0, 0, 0, 0.7)
-            ), url("./../../assets/imgs/map.png");
-            background-repeat: no-repeat;
-            background-position-x: center;
-            background-size: cover;
+    ion-searchbar.searchbar,
+    ion-searchbar.searchbar-ios {
+      width: 85%;
+      margin: 0 auto;
+      margin-top: 40px;
+      box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
+
+      .searchbar-input-container {
+        .searchbar-input {
+          border-radius: 0px;
         }
+      }
+    }
 
-        ion-searchbar.searchbar, ion-searchbar.searchbar-ios {
-            width: 85%;
-            margin: 0 auto;
-            margin-top: 40px;
-            box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
-            .searchbar-input-container{      
-                .searchbar-input{
-                    border-radius: 0px;
-                }
+    ion-slides {
+      height: auto;
+      width: 70%;
+      margin: 0 auto;
+
+      .swiper-wrapper {
+        padding: 20px 0;
+
+        ion-slide {
+          vertical-align: middle;
+          display: inline-block;
+
+          &.swiper-slide-active {
+            width: 50px !important;
+            overflow: visible;
+
+            ion-avatar {
+              box-shadow: 0px 0px 5px 5px #fff;
+              border-radius: 50%;
+
+              img {
+                width: 34px;
+                height: 34px;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+              }
             }
-        }
+          }
 
-        ion-slides {
-            height: auto;
-            width: 70%;
-            margin: 0 auto;
-
-            .swiper-wrapper {
-                padding: 20px 0;
-                
-                ion-slide {
-                    vertical-align: middle;
-                    display: inline-block;
-                
-                    &.swiper-slide-active {
-                        width: 50px !important;
-                        overflow: visible;
-
-                        ion-avatar {
-                            box-shadow: 0px 0px 5px 5px #fff;
-                            border-radius: 50%;
-                        
-                            img {
-                                width: 34px;
-                                height: 34px;
-                                -webkit-transition: all 0.5s ease;
-                                -moz-transition: all 0.5s ease;
-                                -o-transition: all 0.5s ease;
-                                transition: all 0.5s ease;
-                            }
-                        }
-                    }
-
-                    ion-avatar {
-                        vertical-align: middle;
-                        display: inline-block;
-                        border-radius: 50%; 
-                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                        background-color: white;
-                        min-width: 15px;
-                        min-height: 15px;
-                        padding: 3px;
-
-                        img {
-                            width: 15px;
-                            height: 15px;
-                        }
-
-                        &.sibling {
-                            min-width: 28px;
-                            min-height: 28px;
-
-                            img {
-                                width: 28px;
-                                height: 28px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .pin {
-            position: relative;
-            width: 30px;
-            height: 37px;
+          ion-avatar {
+            vertical-align: middle;
             display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background-color: white;
+            min-width: 15px;
+            min-height: 15px;
+            padding: 3px;
 
-            &.pin_gold {
-                background-image: url("./../../assets/imgs/GoldenPin.png");
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position-y: bottom;
-            }
-            &.pin_silver {
-                background-image: url("./../../assets/imgs/SilverPin.png");
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position-y: bottom;
-            }
-            &.pin_bronze {
-                background-image: url("./../../assets/imgs/BronzePin.png");
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position-y: bottom;
-            }
-            &.pin_inactive {
-                background-image: url("./../../assets/imgs/001-maps-and-flags.png");
-                background-size: contain;
-                background-repeat: no-repeat;
-                background-position-y: bottom;
-            }
-            &.pin_selected {
-                border: 1px solid black;
-                border-radius: 50%;
+            img {
+              width: 15px;
+              height: 15px;
             }
 
-            &.pin1 {
-                top: 100px;
-                // left: 123px;
+            &.sibling {
+              min-width: 28px;
+              min-height: 28px;
+
+              img {
+                width: 28px;
+                height: 28px;
+              }
             }
-            &.pin2 {
-                top: 150px;
-                // left: 100px;
-            }
-            &.pin3 {
-                top: 306px;
-                // left: 150px;
-            }
-            &.pin4 {
-                top: 210px;
-                // left: 150px;
-            }
-            &.pin5 {
-                top: 220px;
-                left: 30px;
-            }
-            &.pin6 {
-                top: 100px;
-                // left: 100px;
-            }
-            &.pin7 {
-                top: 350px;
-                // left: 100px;
-            }
-            &.pin8 {
-                top: 100px;
-                // left: 150px;
-            }
-            &.pin9 {
-                top: 210px;
-                // left: 50px;
-            }
-            &.pin10 {
-                top: 220px;
-                // left: 18px;
-            }
-            &.pin11 {
-                top: 100px;
-                // left: 51x;
-            }
-            &.pin12 {
-                top: 307px;
-                left: 130px;
-            }
-            &.pin13 {
-                top: 50px;
-                // left: 98px;
-            }
-            &.pin14 {
-                top: 207px;
-                // left: 80px;
-            }
-            &.pin15 {
-                left: 10px;
-                top: 114px;
-            }
+          }
         }
-
-        .pin_menu {
-            position:fixed;
-            top: 359px;
-            left: 165px;
-            z-index: 1;
-
-            &.pin_menu_inactive {
-                display: none;
-            }
-
-            ion-icon {
-                background-color: rgba(255, 255, 255, 0.9);
-                width: 30px;
-                height: 30px;
-                font-size: 30px;
-                text-align: center;
-                font-weight: bold;
-
-                &.plus {
-                    color: green;
-                }
-            }
-        }
-
-        .pin8_menu {
-            position:fixed;
-            top: 238px;
-            left: 237px;
-            z-index: 1;
-
-            &.pin_menu_inactive {
-                display: none;
-            }
-
-            ion-icon {
-                background-color: rgba(255, 255, 255, 0.9);
-                width: 30px;
-                height: 30px;
-                font-size: 30px;
-                text-align: center;
-                font-weight: bold;
-
-                &.plus {
-                    color: green;
-                }
-            }
-        }
-
-        .pin15_menu {
-            position:fixed;
-            top: 300px;
-            left: 145px;
-            z-index: 1;
-
-            &.pin_menu_inactive {
-                display: none;
-            }
-
-            ion-icon {
-                background-color: rgba(255, 255, 255, 0.8);
-                width: 30px;
-                height: 30px;
-                font-size: 30px;
-                text-align: center;
-                font-weight: bold;
-
-                &.plus {
-                    color: green;
-                }
-            }
-        }
-
-        .path {
-            // stroke-dasharray: 1000;
-            // stroke-dashoffset: 1000;
-            // animation: dash 5s linear forwards;
-        }
-
-        .path-animation {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: dash 5s linear forwards;
-            stroke:#fff;
-        }
-        
-        @keyframes dash {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-
-        ion-card.loc_intro, ion-card.loc8_intro, ion-card.loc15_intro {
-
-            ion-card-content {
-                overflow: auto;
-
-                .loc_intro_pic {
-                    vertical-align: middle;
-                    display: table-cell;
-                    width: 70px;
-                    height: 70px;
-                }
-
-                .loc_intro_text {
-                    font-size: 11px;
-                    display: table-cell;
-                    vertical-align: middle;
-                    padding-left: 10px;
-
-                    p {
-                        font-weight: bold;
-                    }
-                }
-            }
-
-            &.hide {
-                display: none;
-            }
-        }
+      }
     }
+
+    .pin {
+      position: relative;
+      width: 30px;
+      height: 37px;
+      display: inline-block;
+
+      &.pin_gold {
+        background-image: url("./../../assets/imgs/GoldenPin.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+      }
+
+      &.pin_silver {
+        background-image: url("./../../assets/imgs/SilverPin.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+      }
+
+      &.pin_bronze {
+        background-image: url("./../../assets/imgs/BronzePin.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+      }
+
+      &.pin_inactive {
+        background-image: url("./../../assets/imgs/001-maps-and-flags.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+      }
+
+      &.pin_selected {
+        border: 1px solid black;
+        border-radius: 50%;
+      }
+
+      &.pin1 {
+        top: 100px;
+        // left: 123px;
+      }
+
+      &.pin2 {
+        top: 150px;
+        // left: 100px;
+      }
+
+      &.pin3 {
+        top: 306px;
+        // left: 150px;
+      }
+
+      &.pin4 {
+        top: 210px;
+        // left: 150px;
+      }
+
+      &.pin5 {
+        top: 220px;
+        left: 30px;
+      }
+
+      &.pin6 {
+        top: 100px;
+        // left: 100px;
+      }
+
+      &.pin7 {
+        top: 350px;
+        // left: 100px;
+      }
+
+      &.pin8 {
+        top: 100px;
+        // left: 150px;
+      }
+
+      &.pin9 {
+        top: 210px;
+        // left: 50px;
+      }
+
+      &.pin10 {
+        top: 220px;
+        // left: 18px;
+      }
+
+      &.pin11 {
+        top: 100px;
+        // left: 51x;
+      }
+
+      &.pin12 {
+        top: 307px;
+        left: 130px;
+      }
+
+      &.pin13 {
+        top: 50px;
+        // left: 98px;
+      }
+
+      &.pin14 {
+        top: 207px;
+        // left: 80px;
+      }
+
+      &.pin15 {
+        left: 10px;
+        top: 114px;
+      }
+    }
+
+    .pin_menu {
+      position: fixed;
+      top: 359px;
+      left: 165px;
+      z-index: 1;
+
+      &.pin_menu_inactive {
+        display: none;
+      }
+
+      ion-icon {
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+
+        &.plus {
+          color: green;
+        }
+      }
+    }
+
+    .pin8_menu {
+      position: fixed;
+      top: 238px;
+      left: 237px;
+      z-index: 1;
+
+      &.pin_menu_inactive {
+        display: none;
+      }
+
+      ion-icon {
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+
+        &.plus {
+          color: green;
+        }
+      }
+    }
+
+    .pin15_menu {
+      position: fixed;
+      top: 300px;
+      left: 145px;
+      z-index: 1;
+
+      &.pin_menu_inactive {
+        display: none;
+      }
+
+      ion-icon {
+        background-color: rgba(255, 255, 255, 0.8);
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+
+        &.plus {
+          color: green;
+        }
+      }
+    }
+
+    .path {
+      // stroke-dasharray: 1000;
+      // stroke-dashoffset: 1000;
+      // animation: dash 5s linear forwards;
+    }
+
+    .path-animation {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: dash 5s linear forwards;
+      stroke: #fff;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    ion-card.loc_intro,
+    ion-card.loc8_intro,
+    ion-card.loc15_intro {
+
+      ion-card-content {
+        overflow: auto;
+
+        .loc_intro_pic {
+          vertical-align: middle;
+          display: table-cell;
+          width: 70px;
+          height: 70px;
+        }
+
+        .loc_intro_text {
+          font-size: 11px;
+          display: table-cell;
+          vertical-align: middle;
+          padding-left: 10px;
+
+          p {
+            font-weight: bold;
+          }
+        }
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+  }
 }

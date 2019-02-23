@@ -1,8 +1,9 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { GlobalParamsProvider } from '../../providers/global-params/global-params';
+
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 /**
  * Generated class for the HomePage page.
@@ -11,6 +12,8 @@ import { GlobalParamsProvider } from '../../providers/global-params/global-param
  * Ionic pages and navigation.
  */
 
+declare var google;
+
 @IonicPage()
 @Component({
   selector: 'page-home',
@@ -18,20 +21,70 @@ import { GlobalParamsProvider } from '../../providers/global-params/global-param
 })
 export class HomePage implements AfterViewInit {
 
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
+
   ngAfterViewInit(): void {
     this.globalParams.navCtrl = this.navCtrl.parent;
     console.log(this.navCtrl.parent);
-    
+
   }
 
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
-    private globalParams: GlobalParamsProvider) {
+    private globalParams: GlobalParamsProvider,
+    public geolocation: Geolocation) {
   }
 
   ionViewDidLoad() {
-    // console.log('ionViewDidLoad HomePage');
+    this.loadMap();
+  }
+
+
+  loadMap() {
+    this.geolocation.getCurrentPosition({ timeout: 15000 }).then((position) => {
+
+      let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+      let mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+
+    }, (err) => {
+      console.log(err);
+    });
+
+  }
+
+  addMarker() {
+
+    let marker = new google.maps.Marker({
+      map: this.map,
+      animation: google.maps.Animation.DROP,
+      position: this.map.getCenter()
+    });
+
+    let content = "<h4>Information!</h4>";
+
+    this.addInfoWindow(marker, content);
+
+  }
+
+  addInfoWindow(marker, content) {
+
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
+
   }
 
   @ViewChild(Slides) slides: Slides;
@@ -40,28 +93,14 @@ export class HomePage implements AfterViewInit {
     let currentIndex = slides.getActiveIndex();
     // console.log(this.elem.nativeElement);
 
-    if(currentIndex+1 < slides._slides.length){
+    if (currentIndex + 1 < slides._slides.length) {
       // index is in boound
       // this.slides[currentIndex+1].addClass("ng-valid").removeClass("ng-invalid");
     } else {
-     // index out of bounds 
-     // go back
+      // index out of bounds 
+      // go back
       // slides.slideTo(slides._slides.length -1);
     }
-
-
-    // let currentIndex = this.slides.realIndex;
-    // let SlideLength = this.slides;
-    // this.slides.zoom = true;
-
-    // console.log('Current index is', currentIndex);
-    // console.log('Length is', SlideLength);
-
-    // if(currentIndex >= SlideLength) {
-    //   // this.slides[currentIndex].addClass("ng-valid").removeClass("ng-invalid");
-    // } else {
-    //   // this.slides[currentIndex].addClass("ng-invalid").removeClass("ng-valid");
-    // }
   }
 
   pinClicked(event) {
@@ -173,9 +212,8 @@ export class HomePage implements AfterViewInit {
   addtoRoute(event) {
     let pinelem = document.querySelectorAll(".pin:not(.pin_inactive)")[0];
     pinelem.classList.add("pin_selected");
-    
-    if (document.getElementsByClassName("pin_selected").length > 2)
-    {
+
+    if (document.getElementsByClassName("pin_selected").length > 2) {
       let pathelem = document.getElementsByClassName("newroute")[0];
       pathelem.classList.add("path-animation");
     }
