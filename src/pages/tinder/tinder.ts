@@ -54,7 +54,7 @@ export class TinderPage {
     {name: "Ocean Park", content: "Ocean Park Hong Kong, commonly known as Ocean Park, is a marine mammal park, oceanarium, animal theme park and amusement park situated in Wong Chuk Hang and Nam Long Shan in the Southern District of Hong Kong. It is the second largest theme park in Hong Kong.", isElderly: true, isDisability: true},
     {name: "Shek O", content: "Shek O is a beachside village located on the south-eastern part of Hong Kong Island, in Hong Kong. Administratively, it is part of Southern District. The scenery of Shek O is the setting of numerous Cantopop music videos.The Hong Kong director Stephen Chow's famous film 'King of Comedy' was also shot at Shek O.", isElderly: true, isDisability: false},
     {name: "Victoria Peak", content: "Victoria Peak is a hill on the western half of Hong Kong Island. It is also known as Mount Austin.", isElderly: true, isDisability: true},
-    {name: "", content: ""},
+    {name: "", content: "", isElderly: false, isDisability: false},
   ]
 
   slideOpts = {
