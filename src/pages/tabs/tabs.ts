@@ -6,6 +6,7 @@ import { ActionSheetController, Events } from 'ionic-angular';
 import { CameraPage } from '../camera/camera';
 import { GlobalParamsProvider } from '../../providers/global-params/global-params';
 import { DrawerState } from 'ion-bottom-drawer';
+import { MapPage } from '../map/map';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -17,6 +18,7 @@ export class TabsPage {
   tab3Root = CameraPage;
   tab4Root = SocialPage;
   tab5Root = SettingsPage;
+  tab6Root = MapPage;
   
   constructor(
     public actionSheetCtrl: ActionSheetController,

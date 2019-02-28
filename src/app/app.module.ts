@@ -20,6 +20,7 @@ import { SwipeCardsModule } from 'ng2-swipe-cards';
 import { CameraPage } from '../pages/camera/camera';
 import { Camera } from '@ionic-native/camera';
 import { SubMenuComponent } from '../components/sub-menu/sub-menu';
+import { MapPage } from '../pages/map/map';
 
 //import { ComponentsModule } from '../components/components.module';
 @NgModule({
@@ -31,7 +32,8 @@ import { SubMenuComponent } from '../components/sub-menu/sub-menu';
     SettingsPage,
     TabsPage,
     CameraPage,
-    SubMenuComponent
+    SubMenuComponent,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { SubMenuComponent } from '../components/sub-menu/sub-menu';
     SocialPage,
     SettingsPage,
     TabsPage,
-    CameraPage
+    CameraPage,
+    MapPage
   ],
   providers: [
     StatusBar,

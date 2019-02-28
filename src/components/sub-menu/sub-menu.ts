@@ -4,6 +4,7 @@ import { GlobalParamsProvider } from '../../providers/global-params/global-param
 import { DrawerState } from 'ion-bottom-drawer';
 import { TinderPage } from '../../pages/tinder/tinder';
 import { Page } from '../../config/modal';
+import { MapPage } from '../../pages/map/map';
 
 /**
  * Generated class for the SubMenuComponent component.
@@ -57,6 +58,6 @@ export class SubMenuComponent  implements AfterViewInit {
 
   routeCreator(){
     this.globalParams.nowState = DrawerState.Bottom;
-    this.globalParams.navCtrl.select(Page.HomePage);
+    this.nav.push(MapPage);
   }
 }

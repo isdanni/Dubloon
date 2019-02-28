@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { SubMenuComponent } from './sub-menu/sub-menu';
-import { GoogleMapsComponent } from './google-maps/google-maps';
 @NgModule({
-	declarations: [SubMenuComponent,
-    GoogleMapsComponent],
+	declarations: [SubMenuComponent],
 	imports: [],
-	exports: [SubMenuComponent,
-    GoogleMapsComponent]
+	exports: [SubMenuComponent]
 })
 export class ComponentsModule {}

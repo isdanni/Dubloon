@@ -18,6 +18,9 @@ import { GlobalParamsProvider } from '../../providers/global-params/global-param
 })
 export class HomePage implements AfterViewInit {
 
+  
+  @ViewChild(Slides) slides: Slides;
+  
   ngAfterViewInit(): void {
     this.globalParams.navCtrl = this.navCtrl.parent;
     console.log(this.navCtrl.parent);
@@ -31,10 +34,7 @@ export class HomePage implements AfterViewInit {
   }
 
   ionViewDidLoad() {
-    // console.log('ionViewDidLoad HomePage');
   }
-
-  @ViewChild(Slides) slides: Slides;
 
   slideChange(slides) {
     let currentIndex = slides.getActiveIndex();
@@ -48,7 +48,6 @@ export class HomePage implements AfterViewInit {
      // go back
       // slides.slideTo(slides._slides.length -1);
     }
-
 
     // let currentIndex = this.slides.realIndex;
     // let SlideLength = this.slides;
